@@ -1,0 +1,15 @@
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\bin\Debug\net6.0\Services.deps.json
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\bin\Debug\net6.0\Services.dll
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\bin\Debug\net6.0\Services.pdb
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\bin\Debug\net6.0\Repositories.dll
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\bin\Debug\net6.0\Repositories.pdb
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\obj\Debug\net6.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\obj\Debug\net6.0\Services.AssemblyInfoInputs.cache
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\obj\Debug\net6.0\Services.AssemblyInfo.cs
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\obj\Debug\net6.0\Services.csproj.CoreCompileInputs.cache
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\obj\Debug\net6.0\Services.csproj.CopyComplete
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\obj\Debug\net6.0\Services.dll
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\obj\Debug\net6.0\refint\Services.dll
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\obj\Debug\net6.0\Services.pdb
+D:\FinalBlock3\Code\Assignment01Solution_SE161820\Services\obj\Debug\net6.0\ref\Services.dll

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>eStoreAPI</name>
+    </assembly>
+    <members>
+        <member name="M:eStoreAPI.Controllers.AuthenticationsController.Login(Services.ViewModels.LoginView)">
+            <summary>
+            Login.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.CategoriesController.Index">
+            <summary>
+            Get a list of all categories.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.MembersController.Index">
+            <summary>
+            Get a list of all members.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.MembersController.Details(System.Int32)">
+            <summary>
+            Get member by member ID.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.MembersController.Create(Services.ViewModels.MemberCreateView)">
+            <summary>
+            Create member.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.MembersController.Edit(System.Int32,Services.ViewModels.MemberUpdateView)">
+            <summary>
+            Update member.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.MembersController.Delete(System.Int32)">
+            <summary>
+            Delete member.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.OrdersController.Index">
+            <summary>
+            Get a list of all orders.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.OrdersController.Details(System.Int32)">
+            <summary>
+            Get order by order ID.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.OrdersController.OrdersOfMember(System.Int32)">
+            <summary>
+            Get a list of all orders by member ID.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.OrdersController.Create(Services.ViewModels.OrderCreateView)">
+            <summary>
+            Create order.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.OrdersController.Edit(System.Int32,Services.ViewModels.OrderUpdateView)">
+            <summary>
+            Update order.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.OrdersController.Delete(System.Int32)">
+            <summary>
+            Delete order.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.ProductsController.Index">
+            <summary>
+            Get a list of all products.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.ProductsController.Details(System.Int32)">
+            <summary>
+            Get product by product ID.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.ProductsController.Create(Services.ViewModels.ProductCreateView)">
+            <summary>
+            Create product.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.ProductsController.Edit(System.Int32,Services.ViewModels.ProductUpdateView)">
+            <summary>
+            Update product.
+            </summary>
+        </member>
+        <member name="M:eStoreAPI.Controllers.ProductsController.Delete(System.Int32)">
+            <summary>
+            Delete product.
+            </summary>
+        </member>
+    </members>
+</doc>

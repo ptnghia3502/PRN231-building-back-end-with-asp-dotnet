@@ -1,0 +1,14 @@
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\bin\Debug\net6.0\eStore.Repositories.deps.json
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\bin\Debug\net6.0\eStore.Repositories.runtimeconfig.json
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\bin\Debug\net6.0\eStore.Repositories.dll
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\bin\Debug\net6.0\eStore.Repositories.pdb
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\obj\Debug\net6.0\eStore.Repositories.csproj.AssemblyReference.cache
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\obj\Debug\net6.0\eStore.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\obj\Debug\net6.0\eStore.Repositories.AssemblyInfoInputs.cache
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\obj\Debug\net6.0\eStore.Repositories.AssemblyInfo.cs
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\obj\Debug\net6.0\eStore.Repositories.csproj.CoreCompileInputs.cache
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\obj\Debug\net6.0\eStore.Repositories.dll
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\obj\Debug\net6.0\refint\eStore.Repositories.dll
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\obj\Debug\net6.0\eStore.Repositories.pdb
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\obj\Debug\net6.0\eStore.Repositories.genruntimeconfig.cache
+D:\CLONE\Code\Assignment01Solution_SE161820\Repositories\obj\Debug\net6.0\ref\eStore.Repositories.dll

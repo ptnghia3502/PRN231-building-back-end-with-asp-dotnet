@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Repositories.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div id="product-list-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Weight)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UnitPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UnitsInStock)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Weight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UnitPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UnitsInStock)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    function updateProductList() {
+        console.log('Updating product list...');
+
+        var token = '@ViewData["JwtToken"]';
+
+        $.ajax({
+            url: 'http://localhost:5269/api/products',
+            type: 'GET',
+            dataType: 'json',
+            headers: {
+                'Authorization': 'Bearer ' + token
+            },
+            success: function (data) {
+                console.log('AJAX request succeeded:', data);
+
+                var html = '';
+                $.each(data, function (index, product) {
+                    html += '<tr>';
+                    html += '<td>' + product.productName + '</td>';
+                    html += '<td>' + product.weight + '</td>';
+                    html += '<td>' + product.unitPrice + '</td>';
+                    html += '<td>' + product.unitsInStock + '</td>';
+                    html += '<td>' + product.category.categoryName + '</td>';
+                    html += '<td>';
+                    html += '<td>';
+                    html += '<a href="/Products/Edit/' + product.productId + '">Edit</a> | ';
+                    html += '<a href="/Products/Details/' + product.productId + '">Details</a> | ';
+                    html += '<a href="/Products/Delete/' + product.productId + '">Delete</a>';
+                    html += '</td>';
+
+                    html += '</td>';
+                    html += '</tr>';
+                });
+                $('#product-list-container table tbody').html(html);
+            },
+            error: function (xhr, status, error) {
+                console.error('AJAX request failed:', error);
+            }
+        });
+    }
+
+    setInterval(updateProductList, 5000);
+
+</script>

@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Repositories.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Shopping Product</h1>
+
+<p>
+    <a asp-action="Cart">View Cart</a>
+</p>
+
+<div id="product-list-container">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitsInStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitsInStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                    <a asp-action="AddToCart" asp-route-id="@item.ProductId">Add to cart</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $('#product-list-container').on('click', 'a[asp-action="AddToCart"]', function (event) {
+            event.preventDefault();
+            var productId = $(this).attr('asp-route-id');
+        });
+
+        function updateProductList() {
+            console.log('Updating product list...');
+
+            var token = '@ViewData["JwtToken"]';
+
+            $.ajax({
+                url: 'http://localhost:5269/api/products',
+                type: 'GET',
+                dataType: 'json',
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                },
+                success: function (data) {
+                    console.log('AJAX request succeeded:', data);
+                    var html = '';
+                    $.each(data, function (index, product) {
+                        html += '<tr>';
+                        html += '<td>' + product.productName + '</td>';
+                        html += '<td>' + product.weight + '</td>';
+                        html += '<td>' + product.unitPrice + '</td>';
+                        html += '<td>' + product.unitsInStock + '</td>';
+                        html += '<td>' + product.category.categoryName + '</td>';
+                        html += '<td>';
+                        html += '<a asp-action="AddToCart" asp-route-id="' + product.productId + '">Add to cart</a>';
+                        html += '</td>';
+                        html += '</tr>';
+                    });
+                    $('#product-list-container table tbody').html(html);
+                },
+                error: function (xhr, status, error) {
+                    console.error('AJAX request failed:', error);
+                }
+            });
+        }
+
+        setInterval(updateProductList, 7000);
+    });
+</script>

@@ -1,0 +1,87 @@
+﻿@model Repositories.Models.Order
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Order Info</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrderId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RequiredDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RequiredDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ShippedDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ShippedDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Freight)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Freight)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Member.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Member.Email)
+        </dd>
+    </dl>
+</div>
+
+@if (ViewBag.IsAdmin)
+{
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.OrderId">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+}
+
+</hr>
+
+<div>
+    <h4>Order Details</h4>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Discount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var detail in Model!.OrderDetails)
+            {
+                <tr>
+                    <td>@detail.ProductId</td>
+                    <td>@detail.UnitPrice</td>
+                    <td>@detail.Quantity</td>
+                    <td>@detail.Discount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
