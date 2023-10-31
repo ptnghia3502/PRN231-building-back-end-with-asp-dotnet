@@ -1,0 +1,112 @@
+﻿@using eBookStore.Services.ViewModels;
+
+@model IEnumerable<BookViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="text-white">Book List</h1>
+            </div>
+
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <div class="row pb-3">
+            <div class="col-6">
+                <a class="btn btn-primary" asp-controller="Book" asp-action="Create">Create New Book</a>
+            </div>
+            <div class="col-6">
+                <form method="post" asp-controller="Book" asp-action="Search">
+                    <input type="text" name="Search" />
+                    <input type="submit" value="Search" />
+                </form>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                        Royalty
+                    </th>
+                    <th>
+                        Advance
+                    </th>
+
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Published Date
+                    </th>
+                    <th>
+                        Notes
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            @item.Title
+                        </td>
+                        <td>
+                            @item.Type
+                        </td>
+                        <td>
+                            @item.Royalty
+                        </td>
+
+                        <td>
+                            @item.Advance
+                        </td>
+
+                        <td>
+                            @item.Price VND
+                        </td>
+                        <td>
+                            @item.PublishedDate
+                        </td>
+
+                        <td>
+                            @item.Notes
+                        </td>
+
+                        <td>
+                            <a class="btn btn-success" asp-controller="Book" asp-action="Details" asp-route-id="@item.Id">
+                                Details
+                            </a>
+                            <a class="btn btn-success" asp-controller="Book" asp-action="AddAuthor" asp-route-id="@item.Id">
+                                Add Author
+                            </a>
+                            <a class="btn btn-danger" asp-controller="Book" asp-action="Delete" asp-route-id="@item.Id">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

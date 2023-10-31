@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using eBookStore.Services.ViewModels;
+
+namespace eBookStore.Services.InterfaceSerivce
+{
+    public interface IUserService
+    {
+        Task<IEnumerable<UserViewModel>> GetAllUsersAsync();
+        Task<UserViewModel> LoginAsync(string email, string password);
+        Task<UserViewModel> CreateAsync(UserCreateModel userCreateModel);
+        Task<bool> DeleteAsync(Guid id);
+        Task<UserViewModel> UpdateAsync(UserUpdateModel userUpdateModel);
+    }
+}
